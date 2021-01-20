@@ -12,7 +12,10 @@ def convert_list_2_bin(contact_list):
 def convert_bin_2_list():
     file = open('data.bin', 'rb')
     line = file.read()
-    return ast.literal_eval(line.decode('ascii'))
+    if line:
+        return ast.literal_eval(line.decode('ascii'))
+    else:
+        return []
 
 
 def len_fit(text, length, char=' '):
@@ -145,8 +148,8 @@ def delete():
     try:
         result = next(item for item in list_contact if item["first_name"] == query)
         vcard('Delete Contact', result)
-        confirmation = input('               Are you sure to delete this contact? [Y/n] ')
-        if confirmation == '' or confirmation == 'Y' or confirmation == 'y':
+        confirmation = input('               Are you sure to delete this contact? [y/N] ')
+        if confirmation == 'Y' or confirmation == 'y':
             for count, contact in enumerate(list_contact):
                 if result['first_name'] == contact['first_name']:
                     list_contact.pop(count)
@@ -187,7 +190,7 @@ def menu():
         elif choice == '6':
             should = False
         else:
-            message = 'You enter a wrong charecter!'
+            message = 'You enter a wrong character!'
 
 
 about()
