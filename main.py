@@ -193,8 +193,6 @@ def menu():
 about()
 menu()
 os.system('cls' if os.name == 'nt' else 'clear')
-print('\n\n\n\n\n                  ')
+print('\n\n\n\n\n                  github: https://github.com/AminHCE/Contact-Book')
 input('                  Press Enter to Exit ')
 os.system('cls' if os.name == 'nt' else 'clear')
-
-
